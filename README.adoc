@@ -6,6 +6,7 @@
 :source-highlighter: prettify
 :tags: guides,meta
 
-= Getting started on how to 
+= Getting started
+
 This project contains many cheat sheets containing code / web site where we can use then from references and get inspitation from
 
