@@ -1,4 +1,3 @@
-:imagesdir: images
 :couchbase_version: current
 :toc:
 :project_id: gs-how-to
@@ -7,3 +6,4 @@
 :tags: guides,meta
 
 = Getting started
+With this guide you'll learn how to create a guide.
