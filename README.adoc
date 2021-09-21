@@ -1,11 +1,11 @@
 :imagesdir: images
 :couchbase_version: current
 :toc:
-:project_id: gs-how-to-write-a-guide
+:project_id: gs-how-to
 :icons: font
 :source-highlighter: prettify
 :tags: guides,meta
 
-= Getting started with writing a Guide
+= Getting started on how to 
+This project contains many cheat sheets containing code / web site where we can use then from references and get inspitation from
 
-With this guide you'll learn how to create a guide.
