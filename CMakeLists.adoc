@@ -25,7 +25,7 @@ You can find many example incluing basic setup, testing , packing and docker
 
 [TIP]
 ====
-`enable_testing` before `add_subdirectory` and also include the tests subfolder only when tests are ON
+We should `enable_testing` before `add_subdirectory` and also nice to only include the tests subfolder only when tests are ON
 [source,cmake]
 ----
 option(PACKAGE_TESTS "Build the tests" ON)
