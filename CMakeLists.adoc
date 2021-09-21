@@ -8,3 +8,16 @@
 
 = Getting started with cmake
 
+== Project Architecture
+
+Where and how to place the `CMakeLists.txt` file in the project. Whether should we need to place `CMakeLists.txt` file inside the `test` folder ?
+
+  * https://github.com/bast/cmake-example [Basic project]
+  * https://gitlab.com/CLIUtils/modern-cmake/-/tree/master/examples/extended-project [Extented Project]
+  
+== Cmake examples
+
+You can find many example incluing basic setup, testing , packing and docker 
+  
+  * https://github.com/ttroy50/cmake-examples [cmake-examples]
+
