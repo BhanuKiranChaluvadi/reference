@@ -21,3 +21,19 @@ You can find many example incluing basic setup, testing , packing and docker
   
   * https://github.com/ttroy50/cmake-examples[cmake-examples]
 
+== Code Snippets
+
+[TIP]
+====
+`enable_testing` before `add_subdirectory` and also include the tests subfolder only when tests are ON
+[source,cmake]
+----
+option(PACKAGE_TESTS "Build the tests" ON)
+if(PACKAGE_TESTS)
+    enable_testing()
+    include(GoogleTest)
+    add_subdirectory(tests)
+endif()
+----
+
+====
