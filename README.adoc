@@ -12,12 +12,8 @@ This project contains many cheat sheets containing code / web site where we can 
 
 == Getting started with writing adoc Guide
 
-----
-https://github.com/couchbase-guides/how-to-write-a-guide
-----
+https://github.com/couchbase-guides/how-to-write-a-guide[Basic Guide]
 
 you can also take some inspitation from how README.adoc in each sub-project 
 
-----
-https://github.com/ttroy50/cmake-examples
-----
+https://github.com/ttroy50/cmake-examples[cmake adoc]
