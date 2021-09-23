@@ -15,4 +15,4 @@
   * https://github.com/facontidavide/ros_type_introspection[ros_type_introspection]
   * https://github.com/strawlab/ros_comm/blob/master/tools/topic_tools/include/topic_tools/shape_shifter.h[ShapeShifter]
   * https://github.com/tu-darmstadt-ros-pkg/rosmatlab/tree/master/rosmatlab[RosMatlab]
-  * https://github.com/ros-perception/image_common/wiki/ROS2-Migration[ROS2-Migration] ros-perception
+  * https://github.com/ros-perception/image_common/wiki/ROS2-Migration[ROS2-Migration] - ros-perception
