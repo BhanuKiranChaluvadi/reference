@@ -1,0 +1,17 @@
+:imagesdir: images
+:couchbase_version: current
+:toc:
+:project_id: gs-how-to-cmake
+:icons: font
+:source-highlighter: prettify
+:tags: guides,meta
+
+= Getting started with ros2
+
+== Ros2 links
+  * https://github.com/ros2/rosbag2[ros2 bag] - generic publisher/subsciber etc
+  * https://gist.github.com/facontidavide/2e9c198bdd806f4bea32c1335cc3d020[GenericROSPublisher]
+  * https://github.com/PlotJuggler/plotjuggler-ros-plugins/tree/development/plugins[PlotJuggler]
+  * https://github.com/facontidavide/ros_type_introspection[ros_type_introspection]
+  * https://github.com/strawlab/ros_comm/blob/master/tools/topic_tools/include/topic_tools/shape_shifter.h[ShapeShifter]
+  * https://github.com/tu-darmstadt-ros-pkg/rosmatlab/tree/master/rosmatlab[RosMatlab]
