@@ -37,3 +37,7 @@ endif()
 ----
 
 ====
+
+== Cmake compiler flags for cross-compilation
+ 
+ * https://newbedev.com/how-to-specify-new-gcc-path-for-cmake[Specify new gcc path for cross-compilation]
