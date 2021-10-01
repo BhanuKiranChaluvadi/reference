@@ -1,0 +1,28 @@
+:imagesdir: images
+:couchbase_version: current
+:toc:
+:project_id: gs-how-to-cmake
+:icons: font
+:source-highlighter: prettify
+:tags: guides,meta
+
+= Getting started with docker
+
+== Assign your attached devices to docker
+
+On local Machine
+[source,bash]
+----
+micro-ros-agent serial --dev /dev/ttyACM0 -b 115200
+----
+
+it transforms to 
+
+[source,bash]
+----
+docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:galactic serial --dev /dev/ttyACM0 -b 115200
+----
+
+
+
+
