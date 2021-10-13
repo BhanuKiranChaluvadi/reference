@@ -12,6 +12,8 @@ This project contains many cheat sheets containing code / web site where we can 
 
 == Getting started with writing adoc Guide
 
+https://github.com/powerman/asciidoc-cheatsheet/blob/master/README.adoc[Cheat Sheet]
+
 https://github.com/couchbase-guides/how-to-write-a-guide[Basic Guide]
 
 you can also take some inspitation from how README.adoc in each sub-project 

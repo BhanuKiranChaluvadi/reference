@@ -1,0 +1,131 @@
+:imagesdir: images
+:couchbase_version: current
+:toc:
+:project_id: gs-how-to-cmake
+:icons: font
+:source-highlighter: prettify
+:tags: guides,meta
+
+= Getting started with cmake
+
+== GDB
+
+* https://code.visualstudio.com/docs/editor/debugging[vscode-debugging]
+
+== Step By Step
+
+How can we dubug a c++ application using vscode
+
+.Ordered
+. Clone repository
+
+  $ git clone <repo>  
+  
+. Build
+
+  $ mkdir build && cd build
+  $ cmake ..
+  $ make -j9 
+  
+. Open project in vscode
+
+  $ code <path to repo>
+  
+. Edit launch.json
+  From the left control panel click on
+
+  Run and Debug --> C++ (GDB/LLDB) --> edit launch.json
+
+ image::vscode-run-debug-button.png[Run and Debug]
+
+. Edit `program` and `args` parameter as a string list.
+  If your program has multiple executables, You can have multiple entries in the configurations
+  
+  ```
+  "name": "(gdb) MyFirstExecutable"
+  # path to the debug executable
+  "program": "path_to_exectable for example ${workspaceFolder}/a.out""
+   # arguments to the debug executable
+  "args": [
+    -v
+  ]
+  ```
+  
+[%collapsible]
+====
+[source,yaml]
+----
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) URControlTest",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/urcontrol/URControlTest",
+            "args": [
+                "--gtest_filter=*Scenario/2*"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                // {
+                //     "description": "Enable break on all exceptions",
+                //     "text": "catch throw",
+                //     "ignoreFailures": true
+                // }
+            ],
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "(gdb) URControl",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/urcontrol/URControl",
+            "args": [
+                "-r"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
+----
+====
+
+== Debugging Technique
+
+=== Run Debug
+
+ `Press F5` or `click on Run and Debug --> play button`
+
+=== Break Point
+
+Before running the debugger one can click on the line number to set the break points
+
+=== Watch a Break point
+
+Right click on the break pt. you can Choose edit break point. you can choose `Expression/Hit Count/Log Messages` 
+
+Choose `Log Message` `pop {i}` press enter. The cicular Break point changes to rhombus shape. Press F5 to start debugguing
