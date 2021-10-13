@@ -20,6 +20,7 @@
 == Cross-Compilation
 
   * https://github.com/irobot-ros/ros2-cross-compilation[iRobot-cross-compilation]
+  * https://docs.ros.org/en/foxy/How-To-Guides/Cross-compilation.html[ros2 official documentation]
   
 == Performance
  
