@@ -8,7 +8,7 @@
 
 = Getting started with ros2
 
-== Ros2 links
+== Links
   * https://github.com/ros2/rosbag2[ros2 bag] - generic publisher/subsciber etc
   * https://gist.github.com/facontidavide/2e9c198bdd806f4bea32c1335cc3d020[GenericROSPublisher]
   * https://github.com/PlotJuggler/plotjuggler-ros-plugins/tree/development/plugins[PlotJuggler]
@@ -16,3 +16,9 @@
   * https://github.com/strawlab/ros_comm/blob/master/tools/topic_tools/include/topic_tools/shape_shifter.h[ShapeShifter]
   * https://github.com/tu-darmstadt-ros-pkg/rosmatlab/tree/master/rosmatlab[RosMatlab]
   * https://github.com/ros-perception/image_common/wiki/ROS2-Migration[ROS2-Migration] - ros-perception
+
+== Cross-Compilation
+  * https://github.com/irobot-ros/ros2-cross-compilation[iRobot-cross-compilation]
+  
+ == Performance
+  * https://github.com/irobot-ros/ros2-performance[iRobot-ros2-performance]
