@@ -41,3 +41,4 @@ endif()
 == Cmake compiler flags for cross-compilation
  
  * https://newbedev.com/how-to-specify-new-gcc-path-for-cmake[Specify new gcc path for cross-compilation]
+ * https://blog.feabhas.com/2021/07/cmake-part-1-the-dark-arts/[CMake Complete tutorials]
