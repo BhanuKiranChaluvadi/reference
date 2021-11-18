@@ -51,3 +51,9 @@ $ mkdir graphviz && cd graphviz
 $ cmake --graphviz=graph ..
 $ dot graph -Tsvg -o graph.svg
 ----
+
+[source,bash]
+----
+$ mkdir cmake-build-release && cd cmake-build-release
+$ make help
+----
