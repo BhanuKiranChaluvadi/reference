@@ -14,6 +14,12 @@
     * https://bitfieldconsulting.com/golang/map-string-interface[map-string-interface]
     * https://www.digitalocean.com/community/tutorials/understanding-init-in-go[understanding-init-in-go]
 
-== Course Work/Series
+== Articles and Series
     * https://www.digitalocean.com/community/tutorial_series/how-to-code-in-go[Digital Ocean how-to-code-in-go]
     * https://bitfieldconsulting.com/golang/[itfieldconsulting golang]
+
+== Projects
+    * https://bitfieldconsulting.com/golang/how[bitfieldconsulting]
+
+== Course Work
+    * https://bitfieldconsulting.com/golang/bit[bitfieldconsulting]
