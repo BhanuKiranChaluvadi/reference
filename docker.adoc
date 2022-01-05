@@ -24,4 +24,4 @@ docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agen
 ----
 
 == Links
-    * https://devhints.io/docker-compose[docker-compose]
+    * https://devhints.io/docker-compose[docker-compose cheat sheet]
