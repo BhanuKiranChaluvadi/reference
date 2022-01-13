@@ -12,5 +12,6 @@
     * https://github.com/ContainerSolutions[ContainerSolutions - github]
     * https://github.com/ContainerSolutions/kubernetes-examples[kubernetes-examples]
     * https://github.com/ContainerSolutions/k8s-deployment-strategies[k8s-deployment-strategies]
+    * https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/[common-labels]
 
 == 
