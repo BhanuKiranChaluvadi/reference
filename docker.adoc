@@ -25,3 +25,6 @@ docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agen
 
 == Links
     * https://devhints.io/docker-compose[docker-compose cheat sheet]
+
+== What is a docker.sock
+   * https://ben-lab.github.io/golang-reverse-proxy-1-4/[ben-lab]
