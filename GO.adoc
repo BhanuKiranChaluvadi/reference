@@ -23,3 +23,6 @@
 
 == Course Work
     * https://bitfieldconsulting.com/golang/bit[bitfieldconsulting]
+    
+== VS-Code Debug
+    * https://levelup.gitconnected.com/a-complete-go-development-environment-with-docker-and-vs-code-2355aafe2a96[go-development-environment-with-docker-and-vs-code]
