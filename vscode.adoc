@@ -10,6 +10,7 @@
 
 == Remote Container Debug
 * https://code.visualstudio.com/docs/remote/create-dev-container[create-dev-container-article]
+* https://code.visualstudio.com/remote/advancedcontainers/overview[vscode-containers-article]
 * https://github.com/microsoft/vscode-dev-containers[vscode-dev-containers-examples]
 
 == GDB
