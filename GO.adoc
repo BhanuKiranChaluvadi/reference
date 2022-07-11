@@ -33,4 +33,5 @@
 ----
 $ go help test
 $ go help testflag
+$ go test -v ./...
 ----
