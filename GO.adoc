@@ -9,6 +9,7 @@
 = Useful Links/Tutorials and Course Work
 
 == Links
+   * https://gowebexamples.com/[gowebexamples]
 
 == Tutorials/Blog.Articles
     * https://bitfieldconsulting.com/golang/map-string-interface[map-string-interface]
