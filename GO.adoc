@@ -51,3 +51,8 @@ $ go test -bench 512 -benchmem
 $ go test -bench Alloc -memprofile profile.out
 $ go tool pprof profile.out
 ----
+
+== Useful Project
+  * https://github.com/compose-spec/compose-go[compose-go]
+  * https://github.com/go-swagger/go-swagger[go-swagger]
+
