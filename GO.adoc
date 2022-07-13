@@ -9,6 +9,7 @@
 = Useful Links/Tutorials and Course Work
 
 == Links
+   * https://golangdocs.com/[golanf official docs]
    * https://gowebexamples.com/[gowebexamples]
    * https://go101.org/article/type-system-overview.html[101-goTypes]
    * https://yourbasic.org/golang/ [gobasic]
