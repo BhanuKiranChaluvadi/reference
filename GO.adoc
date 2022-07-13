@@ -10,6 +10,7 @@
 
 == Links
    * https://gowebexamples.com/[gowebexamples]
+   * https://go101.org/article/type-system-overview.html[101-goTypes]
 
 == Tutorials/Blog.Articles
     * https://bitfieldconsulting.com/golang/map-string-interface[map-string-interface]
