@@ -112,6 +112,22 @@ $ go run src/cmds/action/action.go -plugin=./plugin.so
 == 3. Managing Workspace
 [source,bash]
 ----
+# cleaning
+$ go clean
+$ go help clean
+
+# formatting
+$ go help fmt
+$ go fmt -n <pkg>
+$ go fmt <pkg>
+$ go doc cmd/gofmt
+
+# vet
+$ go vet <pkg>
+$ go help vet
+$ go doc cmd/vet
+
+# generating the source code
 
 ----
 
