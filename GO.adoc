@@ -105,7 +105,7 @@ $ go run src/cmds/action/action.go -plugin=./plugin.so
 
 == 2. Testing Programs
 [source,bash]
-----íí
+----
 
 ----
 
