@@ -31,6 +31,96 @@
 == VS-Code Debug
     * https://levelup.gitconnected.com/a-complete-go-development-environment-with-docker-and-vs-code-2355aafe2a96[go-development-environment-with-docker-and-vs-code]
 
+== 1. Bulding and Running Programs
+Most of the flags are located in go help build 
+[source,bash]
+----
+# paths src/cmds/hello/hello.go --> func main --> binary
+# path src/hello/msg.go --> hello pacakge --> library
+
+$ go run
+$ go help run
+# if the pacakage has relative file path at <src/cmds/hello/hello.go> not the name of the package
+$ go run src/cmds/hello/hello.go
+
+$ go build
+# package name  src/cmds/hello package
+$ go build hello 
+# package path
+$ go build cmds/hello
+$ go build -o hello.a hello
+# installs intermidiate dependencies. This create a pkg folder of all the intermidiate compiled libraries
+$ go build -i cmds/hello
+
+$ go install
+$ go help install
+# most of the choice flags are in here both for run and instal command
+$ go help build
+# go install <hello_pkg>. This creates a package directory with hello.a (pkg/linux_amd64/hello.a)
+$ go install hello
+# This creates a bin (bin/hello) and pkg (pkg/linux_amd64/hello.a) directory b/c hello cmd depends on hello pkg hello.a linrary is linked to hello binary
+$ go install cmds/hello
+
+
+# Build flags
+# remove the bin & pkg directory
+$ rm -rf bin pkg
+# Dry run. Diplay what compiler is planning to do. This will display all the cmds that this will run
+$ go install -n cmds/hello
+$ go build -p 
+# print the name of the pcakges as they are compiled
+$ go install -v cmds/hello
+$ go install -v ./...
+$ go install -x cmds/hello
+
+# race
+go run -race src/cmds/race/race.go
+
+# buildmode - defaults to archive
+$ go help buildmode 
+$ sudo /usr/local/go/bin/go build -buildmode=shared std
+$ go install -linkshared -buildmode=shared <pkg_name>    #  e.g <pkg_name> = hello
+$ go build -linkshared cmds/hello
+
+# statically linking the C libray
+$ cd src/cmds/hello-c && go build -buildmode=c-archive hello.go
+$ cc hello.c ./hello.a -lpthread
+
+# dynamically linking the C library
+$ cd src/cmds/hello-c && go build -buildmode=c-shared hello.go
+$ cc hello.c ./hello
+
+
+# C Librarys
+$ go help buildmode
+$ go build -buildmode=c-archive src/cmds/hello-c/hello.c.go
+$ cd src.cmds/hello-c && go build -buildmode=c-archive hello.c.go
+
+# Plugin
+$ go build -buildmode=plugin -o=plugin.so src/cmds/plugin/plugin.go
+$ go run src/cmds/action/action.go -plugin=./plugin.so
+
+
+----
+
+== 2. Testing Programs
+[source,bash]
+----íí
+
+----
+
+== 3. Managing Workspace
+[source,bash]
+----
+
+----
+
+== 4. Interacting with the Environment
+[source,bash]
+----
+
+----
+
 == Testing
 
 [source,bash]
