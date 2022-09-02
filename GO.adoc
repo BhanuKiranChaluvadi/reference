@@ -28,8 +28,12 @@
 == Course Work
     * https://bitfieldconsulting.com/golang/bit[bitfieldconsulting]
     
-== VS-Code Debug
+== VS-Code Support
+    * https://github.com/microsoft/vscode-remote-try-go[vscode-remote-try-go]
+    * https://github.com/microsoft/vscode-dev-containers/tree/main/containers/go[vscode-dev-containers]
     * https://levelup.gitconnected.com/a-complete-go-development-environment-with-docker-and-vs-code-2355aafe2a96[go-development-environment-with-docker-and-vs-code]
+    
+ 
 
 == 1. Bulding and Running Programs
 Most of the flags are located in go help build 
