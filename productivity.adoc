@@ -10,3 +10,5 @@
 
 == Links
    * https://blog.bytebytego.com/p/diagram-as-code[diagram-as-code]
+   * https://blog.bytebytego.com/p/ep17-design-patterns-cheat-sheet[design-patterns-cheat-sheet]
+   * 
