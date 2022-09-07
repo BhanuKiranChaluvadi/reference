@@ -9,4 +9,4 @@
 = Useful Links/Tutorials and Course Work
 
 == Links
-   *https://blog.bytebytego.com/p/diagram-as-code[diagram-as-code]
+   * https://blog.bytebytego.com/p/diagram-as-code[diagram-as-code]
