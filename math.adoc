@@ -11,4 +11,5 @@
 
 == Polynomial fit
     * https://github.com/nasa/polyfit[nasa polynomial fit], https://software.nasa.gov/software/MSC-26693-1[Description]
+    * https://math.nist.gov/tnt/[National Institute of Standards and Technology]
     * https://towardsdatascience.com/least-square-polynomial-fitting-using-c-eigen-package-c0673728bd01[Least square polynomial fitting]
