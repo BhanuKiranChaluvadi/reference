@@ -10,6 +10,7 @@
 
 == ROS2 Package template
   * https://github.com/PickNikRobotics/ros2_package_template[ros2_package_template]
+  * https://github.com/PickNikRobotics/roscpp_code_format[ros2_code_formatting]
 
 == Links
   * https://github.com/ros2/rosbag2[ros2 bag] - generic publisher/subsciber etc
