@@ -34,4 +34,6 @@ By issuing by this GET Command, its actually gogin to retuen just some JSON just
   
  === VERBS
   
-  
+ == LINKS
+  * https://app.swaggerhub.com/home[swagger hub]
+  * https://inspector.swagger.io/[swagger inspector]
