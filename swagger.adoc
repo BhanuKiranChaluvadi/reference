@@ -1,0 +1,15 @@
+:imagesdir: images
+:couchbase_version: current
+:toc:
+:project_id: gs-how-to-cmake
+:icons: font
+:source-highlighter: prettify
+:tags: guides,meta
+
+= Useful Links/Tutorials and Course Work
+
+== Links
+   * https://blog.bytebytego.com/p/diagram-as-code[diagram-as-code]
+   * https://blog.bytebytego.com/p/ep17-design-patterns-cheat-sheet[design-patterns-cheat-sheet]
+   * https://www.altexsoft.com/blog/business/technical-documentation-in-software-development-types-best-practices-and-tools/[technical-documentation-in-software-development-types-best-practices-and-tools]
+   * 
