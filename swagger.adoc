@@ -20,3 +20,17 @@ By issuing by this GET Command, its actually gogin to retuen just some JSON just
 
    * get https://api.github.com/users/BhanuKiranChaluvadi. Returns a structured data.
    * get https://api.github.com/users/BhanuKiranChaluvadi/repos --> gives us list of JSONs 
+   
+== api sites
+
+  * http://arest.me/api/sites
+
+== concepts
+
+  * Part of that URI that `we don't think` about when we're designing the APIs is often the `query strings`. So the things that can be added to the end of the URIs to indicate things. Now `query strings should always be optional`, when you think about them logically. And so they're often used for things like formatting and sorting and searching. So as you design your API, I want you to think about the nouns. Nouns are good, verbs are bad. you also want to think about how you're going to use query strings. So `these are typically used for non-resource properties`. So it could be in the way you want to use query strings to sort, to page, to specify format, etc. This really comes down to not requiring any of these, but `allowing developers to have more control over how you're going to get this information` in the way of, you know, getting page results versus sorted results, etc., so that you can allow them to do things that aren't about necessarily specifying how the resource is going to be constituted, but `how the resource is returned`.
+  
+  * when you look at postman get https://api.github.com/users --> returns a list of items. Observe `each item has an Id which is unique`. `We can use this id to make another` request https://api.github.com/users/id. But if `we look at the id here, we could take another step in the path in our URI and just use one of these ids to go ahead and get an individual element`. And this is a way that we're guaranteeing that this URI is unique to this individual resource
+  
+  
+  
+  
