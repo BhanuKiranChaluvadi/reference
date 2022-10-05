@@ -46,3 +46,4 @@ By issuing by this GET Command, its actually gogin to retuen just some JSON just
   * https://github.com/github/rest-api-description[github api openapi], https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.6/ghes-3.6.yaml[example spec], https://github.blog/2020-07-27-introducing-githubs-openapi-description/[article and auto code gen how in github ?] 
   * https://raw.githubusercontent.com/slackapi/slack-api-specs/master/web-api/slack_web_openapi_v2.json[slack-openapi-spec]
   * https://github.com/nytimes/public_api_specs[new yorl time openapi]
+  * https://developer.paypal.com/api/rest/responses/[paypal]
