@@ -27,6 +27,7 @@
 
 == Course Work
     * https://bitfieldconsulting.com/golang/bit[bitfieldconsulting]
+    * https://www.digitalocean.com/community/tutorial_series/how-to-code-in-go[Digital ocean]
     
 == VS-Code Support
     * https://github.com/microsoft/vscode-remote-try-go[vscode-remote-try-go]
