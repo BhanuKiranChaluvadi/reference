@@ -176,3 +176,7 @@ $ go tool pprof profile.out
 ==  Programming Reference
   * https://go.googlesource.com/proposal/+/master/design/go2draft-error-handling-overview.md[copy-file]
   * 
+
+== Errors
+  * https://www.digitalocean.com/community/tutorials/how-to-add-extra-information-to-errors-in-go[how to add extra information to erros in go]
+  
