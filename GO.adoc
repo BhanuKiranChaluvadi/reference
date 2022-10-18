@@ -182,4 +182,5 @@ $ go tool pprof profile.out
   * https://www.digitalocean.com/community/tutorials/how-to-add-extra-information-to-errors-in-go[how to add extra information to erros in go]
   * https://github.com/golang/go/wiki/ErrorValueFAQ
   * https://go.dev/blog/go1.13-errors
+  * https://github.com/go-openapi/errors [example error package]
   
