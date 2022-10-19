@@ -184,3 +184,6 @@ $ go tool pprof profile.out
   * https://go.dev/blog/go1.13-errors
   * https://github.com/go-openapi/errors [example error package]
   
+== Swagger
+  * https://www.ribice.ba/swagger-golang/
+  
