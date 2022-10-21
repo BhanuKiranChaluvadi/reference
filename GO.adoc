@@ -187,4 +187,5 @@ $ go tool pprof profile.out
 == Swagger
   * https://www.ribice.ba/swagger-golang/
   * https://github.com/go-swagger/go-swagger/tree/master/docs/faq
+  * https://github.com/go-swagger/go-swagger/blob/master/docs/use/models/schemas.md#external-types[external-types]
   
