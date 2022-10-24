@@ -47,3 +47,7 @@ By issuing by this GET Command, its actually gogin to retuen just some JSON just
   * https://raw.githubusercontent.com/slackapi/slack-api-specs/master/web-api/slack_web_openapi_v2.json[slack-openapi-spec]
   * https://github.com/nytimes/public_api_specs[new yorl time openapi]
   * https://developer.paypal.com/api/rest/responses/[paypal]
+  
+== OpenAPI tutorial
+  * https://idratherbewriting.com/learnapidoc/pubapis_openapi_step5_components_object.html
+  * https://idratherbewriting.com/learnapidoc/restapispecifications.html
