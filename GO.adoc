@@ -184,6 +184,7 @@ $ go tool pprof profile.out
   * https://go.dev/blog/go1.13-errors
   * https://github.com/go-openapi/errors [example error package]
   * https://s3.amazonaws.com/bizzabo.file.upload/JROQI70xSP24QPpSO26l_J%20Amsterdam%20-%20Working%20with%20Errors.pdf
+  * https://www.joeshaw.org/error-handling-in-go-http-applications/
   
 == Swagger
   * https://www.ribice.ba/swagger-golang/
