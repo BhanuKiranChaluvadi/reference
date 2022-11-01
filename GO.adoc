@@ -8,6 +8,9 @@
 
 = Useful Links/Tutorials and Course Work
 
+== Code Samples
+  * https://yourbasic.org/golang/blueprint/
+  
 == Links
    * https://golangdocs.com/[golanf official docs]
    * https://gowebexamples.com/[gowebexamples]
@@ -36,7 +39,7 @@
     
  
 
-== 1. Bulding and Running Programs
+== 1. Building and Running Programs
 Most of the flags are located in go help build 
 [source,bash]
 ----
