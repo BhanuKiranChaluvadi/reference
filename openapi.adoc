@@ -51,3 +51,6 @@ By issuing by this GET Command, its actually gogin to retuen just some JSON just
 == OpenAPI tutorial
   * https://idratherbewriting.com/learnapidoc/pubapis_openapi_step5_components_object.html
   * https://idratherbewriting.com/learnapidoc/restapispecifications.html
+  
+== Organize swagger.yaml
+  * https://davidgarcia.dev/posts/how-to-split-open-api-spec-into-multiple-files/
