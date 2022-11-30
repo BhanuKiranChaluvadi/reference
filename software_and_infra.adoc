@@ -1,0 +1,12 @@
+:imagesdir: images
+:couchbase_version: current
+:toc:
+:project_id: gs-how-to-cmake
+:icons: font
+:source-highlighter: prettify
+:tags: guides,meta
+
+= Better understanding of software and infra strructute
+
+== Links
+    * https://www.ibm.com/cloud/learn/application-modernization?utm_medium=OSocial&utm_source=Youtube&utm_content=000020LH&utm_term=10005557&utm_id=YTDescription-101-Application-Modernization-LH-Application-Modernization-Guide&cm_mmc=OSocial_Youtube-_-Cloud+and+Data+Platform_INT+Management+and+Platform-_-WW_WW-_-YTDescription-101-Application-Modernization-LH-Application-Modernization-Guide&cm_mmca1=000020LH&cm_mmca2=10005557[Application modernization]
