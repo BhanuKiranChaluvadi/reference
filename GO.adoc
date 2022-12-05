@@ -37,7 +37,9 @@
     * https://github.com/microsoft/vscode-dev-containers/tree/main/containers/go[vscode-dev-containers]
     * https://levelup.gitconnected.com/a-complete-go-development-environment-with-docker-and-vs-code-2355aafe2a96[go-development-environment-with-docker-and-vs-code]
     
- 
+== Cli tool
+    * https://github.com/spf13/cobra-cli/blob/main/README.md[cobra-guide]
+    
 
 == 1. Building and Running Programs
 Most of the flags are located in go help build 
