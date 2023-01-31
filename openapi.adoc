@@ -7,7 +7,11 @@
 :tags: guides,meta
 
 
-= Restful API Good Examples
+= Restful API 
+
+== Learn
+  
+  * https://redocly.com/docs/resources/learning-openapi/
 
 == github
   
