@@ -10,4 +10,4 @@
 
 == Examples
     * https://docs.docker.com/engine/install/debian/
-    * https://cloud.google.com/sdk/docs/initializing
+    * https://cloud.google.com/sdk/docs/install
