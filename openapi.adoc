@@ -13,14 +13,18 @@
   
   * https://redocly.com/docs/resources/learning-openapi/
 
+
+== Tools to generate documentation
+  * https://redocly.com/docs/cli/quickstart/
+  * https://github.com/swagger-api/swagger-codegen
+  * https://github.com/OpenAPITools/openapi-generator  (https://www.devwithimagination.com/archives/tags/openapi/)
+  * https://www.npmjs.com/package/@apidevtools/swagger-cli
+
 == github
   
    * https://docs.github.com/en/rest[github rest]
    
    * In postman --> get https://api.github.com/help --> Observe how error(404) message is structured. Returns a structured data.
-
-
-By issuing by this GET Command, its actually gogin to retuen just some JSON just some json structure about me. And this is what diffeentiates it from the other HTTP requestes because we are going to build an API that return structured data of some sort that is going to fulfill these requests. Rather than returing the whole content. Is is better to return the JSON with various URL's, which they can be used to naviagate from there on.  so I'm going to look at my user through the API. And so by issuing this GET command, it's actually going to return just some JSON, just some structured data about me. And this is what differentiates it from the HTTP request we've been making because you're going to be building an API that returns structured data of some sort that is going to fulfill these requests. So we can see, you know, there's my avatar, there's the URL of where my API is, and this is also the URL for where to get the HTML page of me. In fact, the way that Postman does this is it actually lets you click on them to make a new request. So you can see, it opened up a new window with this URL already prepopulated, and if I go ahead and say Send,  we'll actually see there's my beautiful avatar I created with their little tool, right. And so this is going to represent a way to do this. But `the idea behind this being a well designed API is that it has a lot of these URLs that will allow you to investigate or to look at different pieces of our resource that we got`, like one of them is this repos_url. If you want to look at all the repos that I have, let's go ahead and click that to open it up in a new window, and when we send that, it's going to list a bunch of information for us. In this case, it's the JSON that it is an array of each of the repos that I have that are public. And again, this is just public information because so far we haven't talked about security at all, and we won't until the last section. But this is information that is publicly available in this API that GitHub has decided to design. And we're going to see a lot of these same concepts, that we're going to talk about in the next four modules, introduced here. The idea of readable URIs. So by looking at the URI here, we can see that sure it's at the API for GitHub, we're going to look at the users and the user has a name, and some information about that user, in the case of repos, it's really logical, and so it's going to help your developers to build these APIs in a really smart functional way. So I'd like to introduce the GitHub API as a great API because I think it is really well thought out and really well designed. Let's go ahead and wrap up this modulue.
 
    * get https://api.github.com/users/BhanuKiranChaluvadi. Returns a structured data.
    * get https://api.github.com/users/BhanuKiranChaluvadi/repos --> gives us list of JSONs 
@@ -29,14 +33,6 @@ By issuing by this GET Command, its actually gogin to retuen just some JSON just
 
   * http://arest.me/api/sites
 
-== concepts
-
-=== URI
-  * Part of that URI that `we don't think` about when we're designing the APIs is often the `query strings`. So the things that can be added to the end of the URIs to indicate things. Now `query strings should always be optional`, when you think about them logically. And so they're often used for things like formatting and sorting and searching. So as you design your API, I want you to think about the nouns. Nouns are good, verbs are bad. you also want to think about how you're going to use query strings. So `these are typically used for non-resource properties`. So it could be in the way you want to use query strings to sort, to page, to specify format, etc. This really comes down to not requiring any of these, but `allowing developers to have more control over how you're going to get this information` in the way of, you know, getting page results versus sorted results, etc., so that you can allow them to do things that aren't about necessarily specifying how the resource is going to be constituted, but `how the resource is returned`.
-  
-  * when you look at postman get https://api.github.com/users --> returns a list of items. Observe `each item has an Id which is unique`. `We can use this id to make another` request https://api.github.com/users/id. But if `we look at the id here, we could take another step in the path in our URI and just use one of these ids to go ahead and get an individual element`. And this is a way that we're guaranteeing that this URI is unique to this individual resource
-  
- === VERBS
   
  == LINKS
   * https://app.swaggerhub.com/home[swagger hub]
