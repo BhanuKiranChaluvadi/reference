@@ -196,3 +196,10 @@ $ go tool pprof profile.out
   * https://github.com/go-swagger/go-swagger/tree/master/docs/faq
   * https://github.com/go-swagger/go-swagger/blob/master/docs/use/models/schemas.md#external-types[external-types]
   
+
+== build optimised go code
+
+To build an optimized release version of the application, use the following command:
+
+```bash
+go build -ldflags="-s -w" -gcflags="-trimpath" -tags="release" -o your_binary_name your_main_file.go
