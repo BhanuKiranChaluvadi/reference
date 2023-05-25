@@ -1,0 +1,14 @@
+:imagesdir: images
+:couchbase_version: current
+:toc:
+:project_id: gs-how-to-cmake
+:icons: font
+:source-highlighter: prettify
+:tags: guides,meta
+
+= Getting started with cross-compilation
+
+== Difference between arm-none-eabi- and arm-linux-gnueabihf
+
+  * https://wiki-archive.linaro.org/WorkingGroups/ToolChain/FAQ#What_is_the_differences_between_.2BIBw-arm-none-eabi-.2BIB0_and_.2BIBw-arm-linux-gnueabihf.2BIB0.3F_Can_I_use_.2BIBw-arm-linux-gnueabihf.2BIB0_tool_chain_in_bare-metal_environment.3F_How_do_you_know_which_toolchain_binary_to_use_where.3F[Differences]
+  * https://www.incredibuild.com/blog/cross-compile-with-cmake[Tutorial]
