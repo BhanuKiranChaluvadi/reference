@@ -10,4 +10,5 @@
 
 == Software architecutur
 
+  * http://locolabs.com/how-to-choose-the-right-firmware-architecture-for-your-iot-device-2/[embedded-software]
   * https://www.microcontrollertips.com/how-does-embedded-software-work/[embedded-software]
