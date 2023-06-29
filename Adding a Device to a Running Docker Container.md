@@ -69,3 +69,75 @@ This command will give all users read and write access to the device. If you wan
 ---
 
 **Please note:** These operations require root access and can have security implications. Make sure to understand what each step is doing and consider these implications before using these commands.
+
+
+
+Sure, here's a markdown document for the process described by your script.
+
+
+
+
+
+
+
+
+---
+# Adding a Device to a Running Docker Container
+
+**NOTE: This guide is applicable only when using cgroups v1. Docker may not fully support this method if you're using cgroups v2.**
+
+This guide explains how to add a device to a running Docker container by enabling access through cgroups, and then creating the device within the container.
+
+## Step 1: Identify Major and Minor Device Numbers
+
+Identify the major and minor device numbers of the device you want to add. Replace `device_name` with the name of your device (e.g., `ttyUSB0`):
+
+```bash
+ls -l /dev/device_name | grep device_name | awk '{print $5, $6}'
+```
+
+This command outputs the major and minor numbers of the specified device.
+
+## Step 2: Get the ID of the Running Container
+
+Replace `CONTAINER_NAME` with the name of your Docker container:
+
+```bash
+container_id=$(docker ps --quiet --all --no-trunc --filter "name=^${CONTAINER_NAME}$")
+```
+
+This command sets the `container_id` variable to the ID of the running Docker container with the specified name.
+
+## Step 3: Allow Container's cgroup Access to the Device
+
+Replace `DEVICE_MAJOR` and `DEVICE_MINOR` with the major and minor numbers of your device, and `container_id` with the ID of your Docker container:
+
+```bash
+echo "c ${DEVICE_MAJOR}:${DEVICE_MINOR} rwm" | sudo tee /sys/fs/cgroup/devices/docker/${container_id}/devices.allow
+```
+
+This command allows the Docker container's cgroup to access the specified device.
+
+## Step 4: Create Device Directory Inside the Container
+
+Replace `DEVICE_FOLDER_IN_CONTAINER` with the directory path inside the container where you want to create the device, and `CONTAINER_NAME` with the name of your Docker container:
+
+```bash
+docker exec ${CONTAINER_NAME} mkdir -p -m777 ${DEVICE_FOLDER_IN_CONTAINER}
+```
+
+This command creates the specified directory inside the Docker container, if it does not already exist.
+
+## Step 5: Create Device Node Inside the Container
+
+Replace `DEVICE_PATH_IN_CONTAINER` with the device path inside the container, `DEVICE_MAJOR` and `DEVICE_MINOR` with the major and minor numbers of your device, and `CONTAINER_NAME` with the name of your Docker container:
+
+```bash
+docker exec ${CONTAINER_NAME} mknod -m 666 ${DEVICE_PATH_IN_CONTAINER} c ${DEVICE_MAJOR} ${DEVICE_MINOR}
+```
+
+This command creates a new device node inside the Docker container.
+
+---
+
+**Please note:** These operations require root access and can have security implications. Make sure to understand what each step is doing and consider these implications before using these commands.
