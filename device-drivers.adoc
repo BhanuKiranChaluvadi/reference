@@ -11,4 +11,5 @@
 == Simple Explaination
 
   * https://www.digitalcitizen.life/what-are-drivers-why-do-you-need-them/[Basic]
+  * https://www.cgdirector.com/do-cpus-require-drivers/[picture]
   
