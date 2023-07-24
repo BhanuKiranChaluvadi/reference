@@ -4,6 +4,11 @@ Docker utilizes namespaces to provide isolated workspaces for containers. One of
 
 This guide will show you how to find the network namespace of a Docker container.
 
+First you find the interface name with 
+```bash
+ip link show
+```
+
 ## Step 1: Inspect the Docker Container
 
 Use the `docker inspect` command with the `--format` option to retrieve the network namespace of a specific container. Replace `<container_id>` with the ID or name of your Docker container:
@@ -41,3 +46,48 @@ In this command, `<PID>` is the PID of the Docker container, and `<command>` is 
 Please note that if your Docker version uses a private mount namespace or your system does not support `nsenter`, you might need to use Docker's own commands, such as `docker exec`, to interact with the container's network namespace.
 
 As always, please be aware of the implications of entering a container's namespaces, as it can potentially impact the isolation and security of the container.
+
+
+
+##############################################
+
+Here is the commands to move a socket interface into a container
+
+First you find the interface name with 
+
+```bash
+ip link show
+```
+ 
+
+Secondly you find your container network namespace name with the command
+
+```bash
+docker inspect $(docker ps -aq) -f '{{.Name}} ns  {{.NetworkSettings.SandboxKey}}'
+```
+ 
+
+Next you move the interface to the new namespace
+
+```bash
+ip link set eth1 netns /var/run/docker/netns/35847b8440f8
+```
+ 
+
+Then you can verify from the host with the command
+
+```bash
+nsenter --net=/var/run/docker/netns/35847b8440f8 ip link show
+```
+ 
+
+If you kill the container and thereby also the namespace the interface does come back to the host
+
+Alternatively you can run the command
+
+```bash
+nsenter --net=/var/run/docker/netns/35847b8440f8 ip link set eth1 netns /proc/1/ns/net
+```
+
+
+This should get you going with eth1 inside the container
