@@ -12,3 +12,9 @@
 == namespace and cgroup 
     * https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504
     
+== systemd Analysis
+
+ $ systemd-analyze critical-chain
+ $ systemctl list-jobs
+ $ systemd-analyze blame
+ $ 
