@@ -89,5 +89,43 @@ Alternatively you can run the command
 nsenter --net=/var/run/docker/netns/35847b8440f8 ip link set eth1 netns /proc/1/ns/net
 ```
 
+# Way 2:
+```bash
+Here is the commands to move a socket interface into a container
+
+First you find the interface name with 
+
+ip link show
+
+ 
+
+Secondly you find your container network namespace name with the command
+
+docker inspect $(docker ps -aq) -f '{{.Name}} ns  {{.NetworkSettings.SandboxKey}}'
+
+ 
+
+Next you move the interface to the new namespace
+
+ip link set eth1 netns /var/run/docker/netns/35847b8440f8
+
+ 
+
+Then you can verify from the host with the command
+
+nsenter --net=/var/run/docker/netns/35847b8440f8 ip link show
+
+ 
+
+If you kill the container and thereby also the namespace the interface does come back to the host
+
+Alternatively you can run the command
+
+nsenter --net=/var/run/docker/netns/35847b8440f8 ip link set eth1 netns /proc/1/ns/net
+
+
+This should get you going with eth1 inside the container
+
+```
 
 This should get you going with eth1 inside the container
