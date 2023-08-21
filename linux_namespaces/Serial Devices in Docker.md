@@ -47,3 +47,15 @@ Now, when you plug in or create `ttyUSB` devices, they should be accessible to a
 > **Note:** Always be careful when changing device permissions, as unrestricted access can pose a security risk. Only grant necessary access to the users who need it.
 
 ---
+
+# Way 2:
+```bash
+# get ID of the running container
+container_id=$(docker ps --quiet --all --no-trunc --filter "name=^${CONTAINER_NAME}$")
+
+# allow the container's cgroup access to the specific device via cgroups
+echo "c ${DEVICE_MAJOR}:${DEVICE_MINOR} rwm" | sudo tee /sys/fs/cgroup/devices/docker/${container_id}/devices.allow
+# create the device in the container
+docker exec ${CONTAINER_NAME} mkdir -p -m777 ${DEVICE_FOLDER_IN_CONTAINER}
+docker exec ${CONTAINER_NAME} mknod -m 666 ${DEVICE_PATH_IN_CONTAINER} c ${DEVICE_MAJOR} ${DEVICE_MINOR}
+```
