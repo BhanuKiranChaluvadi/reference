@@ -14,3 +14,73 @@ Below is a table explaining various terms and abbreviations used in the TwinCAT 
 | POUsImplicits  | Program Organization Units Implicits - blocks of code like functions, FBs, or programs; "Implicits" may be default or automatically included units. |
 | Sequence       | Refers to a sequence of operations or steps, like in sequence programming.                                  |
 | VISUs          | Visualizations - graphical interfaces for interaction or monitoring.                                         |
+
+
+## PLC POUs vs. C++ Concepts
+
+<table>
+<tr>
+<td>POU (PLC)</td>
+<td>C++ Analogy</td>
+<td>Description & C++ Example</td>
+</tr>
+
+<tr>
+  <td>Program (PRG)</td>
+  <td>`main()` function</td>
+  <td>
+
+  ```c++
+  int main()
+  {
+    return 0;
+  }
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>Function (FC)</td>
+  <td>Regular function</td>
+  <td>
+
+  ```c++
+  int add(int a, int b)
+  {
+    return a + b;
+  }
+  ```
+
+  </td>
+</tr>
+
+<tr>
+  <td>Function Block (FB)</td>
+  <td>Class</td>
+  <td>
+
+  ```c++
+  class Counter
+  {
+  private:
+    int count;
+
+  public:
+    Counter() : count(0) {}
+    
+    void increment()
+    {
+      count++;
+    }
+
+    int getCount()
+    {
+      return count;
+    }
+  };
+  ```
+
+  </td>
+</tr>
+</table>
