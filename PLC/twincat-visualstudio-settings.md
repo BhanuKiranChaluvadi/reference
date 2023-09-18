@@ -13,12 +13,17 @@
 4. **TwinCAT Project Compare**  
    Navigate to `Twincat` (located in the Visual Studio top header) --> `TcProjectCompare`.
 
-5. **Set Up Git Diff Tool for TwinCat**  
+5. **Remove Line ID**
+   This is needed to be removed for version cotrol. `Tools` --> `options` --> `Twincat` --> `PLC Environment` --> `Write Options` --> `Separate LineIDs` to True.
+  
+6. **Set Up Git Diff Tool for TwinCat**  
    - Press the Windows button and search for `twincat project compare`.
    - Go to `Tools` --> `Configure Usertools`.
    - Choose `Export Configuration` and then select the `Plugin` option and set it to `git`.
   
-6. **Set Up Static Analysis**
+7. **Set Up Static Analysis**
    - select  `<project>` --> `PLC` --> `<Project>`
    - Right click on `Project` on top header tab. `Projects` --> `Static Analysis`. Check all the boxex that are applicable.
+  
+
 
