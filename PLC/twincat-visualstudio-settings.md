@@ -17,4 +17,8 @@
    - Press the Windows button and search for `twincat project compare`.
    - Go to `Tools` --> `Configure Usertools`.
    - Choose `Export Configuration` and then select the `Plugin` option and set it to `git`.
+  
+6. **Set Up Static Analysis**
+   - select  `<project>` --> `PLC` --> `<Project>`
+   - Right click on `Project` on top header tab. `Projects` --> `Static Analysis`. Check all the boxex that are applicable.
 
