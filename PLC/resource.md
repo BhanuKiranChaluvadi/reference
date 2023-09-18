@@ -1,9 +1,4 @@
-
-<ul>
-  <li> [sagatowski](https://github.com/sagatowski) </li>
-  <li> [benhar-dev](https://github.com/benhar-dev) </li>
-  <li> [twincat-resources](https://github.com/benhar-dev/twincat-resources)</li>
-  <li> </li>
-  <li> </li>
-  <li> </li>
-</ul>
+- [sagatowski](https://github.com/sagatowski)
+- [benhar-dev](https://github.com/benhar-dev)
+- [twincat-resources](https://github.com/benhar-dev/twincat-resources)
+- [courses](https://beckhoff-au.teachable.com/courses)
