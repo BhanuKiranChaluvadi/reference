@@ -1,4 +1,4 @@
-- - [tclinks](https://cookncode.com/tclinks/)
+- [tclinks](https://cookncode.com/tclinks/)
 - [sagatowski](https://github.com/sagatowski)
 - [benhar-dev](https://github.com/benhar-dev)
 - [twincat-resources](https://github.com/benhar-dev/twincat-resources)
