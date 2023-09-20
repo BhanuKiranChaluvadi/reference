@@ -14,6 +14,11 @@ Below is a table explaining various terms and abbreviations used in the TwinCAT 
 | POUsImplicits  | Program Organization Units Implicits - blocks of code like functions, FBs, or programs; "Implicits" may be default or automatically included units. |
 | Sequence       | Refers to a sequence of operations or steps, like in sequence programming.                                  |
 | VISUs          | Visualizations - graphical interfaces for interaction or monitoring.                                         |
+|                |                                                                                                              |
+| RTD            |  Resistance Temperature Detector (RTD)                                                                       |
+| AI             | Analog input (AI) channel. EX: Configure analog input (AI) channel properties to measure temperature from a Resistance Temperature Detector (RTD). |
+
+                                                                                    |
 
 
 ## PLC POUs vs. C++ Concepts
