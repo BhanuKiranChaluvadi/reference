@@ -41,3 +41,13 @@
   6. A windows appears to choose the location to save the solution. Create a folder and choose it. `Select Folder`
   7. Warning message might pop up, if there is an architecture miss match. click `YES`
   8. The solution is loaded and also located at the appopriate location, selected before.
+
+- **Save solution from target**:
+  1. Load solution from target
+  2. Right click on the `Solution(Solution 'Atlant3D' (1 project))` -->  `Save <project> as Archive`
+ 
+- **Find Compiler version**:
+  1. Right click on the` PLC Project (N0_PLC_Project)` --> `compiler` --> `Solution options` --> `Compiler Version ` --> `Drop down Menu`
+ 
+- **Pin Compiler Version**:
+  1. 
