@@ -47,7 +47,16 @@
   2. Right click on the `Solution(Solution 'Atlant3D' (1 project))` -->  `Save <project> as Archive`
  
 - **Find Compiler version**:
-  1. Right click on the` PLC Project (N0_PLC_Project)` --> `compiler` --> `Solution options` --> `Compiler Version ` --> `Drop down Menu`
+  1. Right click on the `PLC Project (N0_PLC_Project)` --> `compiler` --> `Solution options` --> `Compiler Version ` --> `Drop down Menu`
  
 - **Pin Compiler Version**:
-  1. 
+  1. Double click on `SYSTEM` --> `Version` --> `Pin Version`
+
+- **Pin Library/reference Version**
+  1. Double click on `References`
+  2. Click on `Placeholder`
+  3. If the Reference versions are not pinned. Then you will see the `Info` column with `Resolved by library profile`.
+  4. And also in the library section you will see the astrik (*). Mean use the latest version.
+  6. In the window Click on the `Library Column` for each of the entry and select the verion.
+  7. I guess you also fix it by,  Right click on `References` --> `Set to effective version`
+  8. Once all set you will see the `Info` in the `placeholders` menu --> `Resolved by placeholder redirection`
