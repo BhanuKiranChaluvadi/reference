@@ -12,6 +12,11 @@
   ```bash
   C:\TwinCAT\Functions\TE2000-HMI-Engineering\References
   ```
+- **PLC Libraries**: 
+  ```bash
+  C:\TwinCAT\3.1\Components\Plc\Managed Libraries
+  ```
+In order to add libraries, follow the [link](https://github.com/Beckhoff-USA-Community/SPT-Libraries) for instructions.
 
 - **Build a Newget package in TXAEShell**:
   1. Select the project (e.g: ProcessAutomationLib)
