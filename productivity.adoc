@@ -15,5 +15,5 @@
    * https://www.conventionalcommits.org/en/v1.0.0/#specification[git commmit message]
 
 == How to create a task
-  * What is the action + what is the outcome ?
+  * What is the action (action verb) + what is the outcome ?
   * Why should manager should care ? or my stake holders should care about this task ? How is it helping the company ? put yourself in their shoes.
