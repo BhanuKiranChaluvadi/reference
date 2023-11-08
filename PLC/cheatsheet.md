@@ -65,3 +65,6 @@ In order to add libraries, follow the [link](https://github.com/Beckhoff-USA-Com
   6. In the window Click on the `Library Column` for each of the entry and select the verion.
   7. I guess you also fix it by,  Right click on `References` --> `Set to effective version`
   8. Once all set you will see the `Info` in the `placeholders` menu --> `Resolved by placeholder redirection`
+
+- **Location of `www` folder in Twincat HMI**
+   `C:/ProgramData/Beckhoff/TF2000%20TwinCAT%203%20HMI%20Server/service/TcHmiProject/www`
