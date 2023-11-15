@@ -23,3 +23,31 @@ To create a new Windows Forms application with .NET 6.0:
 ```bash
 dotnet new winforms -n HelloWorld -f net6.0
 ```
+
+## Create Solution
+
+```bash
+dotnet new sln -n YourSolutionName
+```
+```bash
+dotnet new classlib -n YourLibraryName
+```
+
+```bash
+dotnet new console -n YourConsoleAppName
+```
+```bash
+dotnet sln YourSolutionName.sln add YourLibraryName/YourLibraryName.csproj
+dotnet sln YourSolutionName.sln add YourConsoleAppName/YourConsoleAppName.csproj
+```
+
+```bash
+cd YourConsoleAppName
+dotnet add reference ../YourLibraryName/YourLibraryName.csproj
+```
+```bash
+dotnet build
+```
+```bash
+dotnet run --project YourConsoleAppName
+```
