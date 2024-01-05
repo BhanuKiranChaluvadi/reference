@@ -51,3 +51,8 @@ dotnet build
 ```bash
 dotnet run --project YourConsoleAppName
 ```
+
+```bash
+dotnet add package Newtonsoft.Json
+dotnet add package Beckhoff.TwinCAT.Ads
+```
