@@ -13,7 +13,7 @@ To delve into the details of a terminal variable, navigate through the interface
 
 - To explore this link further, **right-click** on the arrow and select **"Go To Link Variable"**. This action will direct you to the associated variable for more detailed examination.
 
-## Using the F2 Button for Navigation
+## F2 Button
 
 The F2 button serves as a shortcut to view and manage variables within your code efficiently:
 
