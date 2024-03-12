@@ -36,6 +36,11 @@ In essence:
 
 ---
 
+## Articles
+### Modbus
+
+- [By National Instruments](https://www.ni.com/en/shop/seamlessly-connect-to-third-party-devices-and-supervisory-system/the-modbus-protocol-in-depth.html)
+
 ## Notes
 
 - The matrix above signifies typical or standard pairings. Non-standard configurations might exist in specialized settings or with the help of additional equipment or software.
