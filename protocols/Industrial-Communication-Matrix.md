@@ -41,6 +41,10 @@ In essence:
 
 - [By National Instruments](https://www.ni.com/en/shop/seamlessly-connect-to-third-party-devices-and-supervisory-system/the-modbus-protocol-in-depth.html)
 
+### serial communication
+
+- [rs485-vs-rs232-vs-rs422](https://allmeteo.com/rs485-vs-rs232-vs-rs422)
+
 ## Notes
 
 - The matrix above signifies typical or standard pairings. Non-standard configurations might exist in specialized settings or with the help of additional equipment or software.
