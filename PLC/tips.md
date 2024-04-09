@@ -1,11 +1,17 @@
 
 ## Color Coding
-
-When navigating through the TeamViewer interface to monitor or configure your EtherCAT terminals, follow this path: **Devices > EtherCAT > Term X > Term Y > Drop Down Menu**. Here, you will encounter various colored boxes, each representing a different type of information:
+### PLC
+When configuring your EtherCAT terminals, follow this path: **Devices > EtherCAT > Term X > Term Y > Drop Down Menu**. Here, you will encounter various colored boxes, each representing a different type of information:
 
 - **Yellow:** Represents **inputs**. This color indicates data traveling from the terminal to the PLC (Programmable Logic Controller).
 - **Red:** Signifies **outputs**. It shows when the output to PLC is written back to the terminal, denoting data movement from the PLC to the terminal.
 - **Green:** Indicates **status** information about the terminal or connection. And it is Acyclic.
+
+### HMI
+This explaing the color schema of various variable the you encounter in Beckhoff HMI
+- **S Blue:** S repesents the server symbol. These are linked symbols (read/write) to PLC code.
+- **C Green** C stands for HMI controls. We are using a property of the HMI Controls from the beckoff. Control interface properties like button background color etc.
+- **P yellow** P Stands for parameters. These are the input and ouput params for a function.
 
 ## Arrow Navigation
 
