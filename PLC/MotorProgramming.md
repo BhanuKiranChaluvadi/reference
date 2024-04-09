@@ -20,7 +20,7 @@ Added
   5. Reduced current (positive) --> 100
   6. Reduce current (negative) --> 100
 
-5. Modify the NC-Task Drive parameters
+5. Modify the NC-Task Axis Specific parameters
 
   You can see which PLC terminal this Axis is connected
    Motion --> NC-Task 1 SAF --> Axes --> Axis N --> settings 
@@ -43,6 +43,31 @@ Manual Motion and Homing
   Manual Velocity (Slow) (1.0)
 Monitoring
   Position Lag Monitoring (FALSE)
-6. 
-7.
-8. 
+
+  
+6. Modify the Nc-Task Encoder specific parameters
+
+  Motion --> NC-Task 1 SAF --> Axes --> Axis N --> Enc --> parameter
+  Encoer Evaluation
+    Invert Encoder Counting Direction ? (True)
+    scaling Factor Numerator (mm/INC) (1.0)
+    Scale Factor Numerator (mm/INC) (135168.0)
+  
+7. Modify the Nc-Task Drive specific parameters
+  Motion --> NC-Task 1 SAF --> Axes --> Axis N --> Drive --> parameter
+  Output Settings:
+    Invert Motor Polarity : TRUE
+   
+
+9. Save all changes --> Activate Configuration 
+
+10. Enable Motor
+  Motion --> NC-Task 1 SAF --> Axes --> Axis N --> double click --> online  --> Enabling --> set --> select all --> OK
+
+11. Try and run in Functions
+   Motion --> NC-Task 1 SAF --> Axes --> Axis N --> double click --> Functions --> Raw rive output
+    Output Mode: Velocity
+    Output Value: 1 mm/s
+    CLick on Start. and the motor should move in some [positive] direction.
+    
+ 
