@@ -36,7 +36,13 @@ Added
 Default Dynamicd:
   Default Acceleration (4.0)
   Default Deceleration (4.0)
-  
+Manual Motion and Homing
+  Homing Velocity (towards plc cam) (1.0)
+  Homing Velocity (off plc cam) (1.0)
+  Manual Velocity (Fast) (1.0)
+  Manual Velocity (Slow) (1.0)
+Monitoring
+  Position Lag Monitoring (FALSE)
 6. 
 7.
 8. 
