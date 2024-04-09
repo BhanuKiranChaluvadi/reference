@@ -20,6 +20,23 @@ Added
   5. Reduced current (positive) --> 100
   6. Reduce current (negative) --> 100
 
-5.
-6.
-7. 
+5. Modify the NC-Task Drive parameters
+
+  You can see which PLC terminal this Axis is connected
+   Motion --> NC-Task 1 SAF --> Axes --> Axis N --> settings 
+
+   Adjust Paramters 
+  Motion --> NC-Task 1 SAF --> Axes --> Axis N --> Parameters
+
+  Maximum Dynamics:
+    Reference Velocity (1.0)
+    Maximum Velocity (1.0)
+    Maximum Acceleration(1.0)
+    Maximum Deceleration (1.0)
+Default Dynamicd:
+  Default Acceleration (4.0)
+  Default Deceleration (4.0)
+  
+6. 
+7.
+8. 
