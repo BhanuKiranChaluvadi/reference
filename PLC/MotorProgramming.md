@@ -1,73 +1,190 @@
 
-1. Scan for the beckhoff terminals
+# Beckhoff Terminal Configuration Guide
 
-2. Check for the linked variables. In our case EL7332 for controlling/Drive the motor and encoder EL5131 are different. They should be matched with the NC-Task axes
+This guide provides step-by-step instructions for configuring Beckhoff terminals, specifically focusing on the EL7332 and EL5131 models for motor and encoder control, respectively.
 
-Only Drive EL7332 variables are auto connected
-NC-Drive option in Motion --> NC-Task 1 SAF --> Axes --> Axis N --> Drive --> NC-Drive --> Link To variable
+## 1. Terminal Scanning
 
-Manually link the encoder variables
-NC-Drive option in Motion --> NC-Task 1 SAF --> Axes --> Axis N --> Enc --> NC-Encoder --> Link To variable
+Scan for the Beckhoff terminals to identify the available devices.
 
+## 2. Variable Linking
 
-3. Add "Startup" task for the each terminal. In our case all the Drive(EL7332) terminals. Do not use CoE-online as they are flashed directly into the terminal and problem will arise if the terminal goes bad and values are not present in the version control.
-  I/O --> Devices --> Device N (Ethercat) --> Tern N (EK1100) --> Term N (EL7332) --> Startup --> New --> Navigate to section 8020:0
-Added
-  1. Maximum current --> 210
-  2. Nominal current --> 150
-  3. Nominal Voltage  --> 24000
-  4. Motor coil resistance --> 5460
-  5. Reduced current (positive) --> 100
-  6. Reduce current (negative) --> 100
+Check and link variables for the control system:
 
-5. Modify the NC-Task Axis Specific parameters
+- For EL7332 (Drive), auto-connected variables are used for motor control.
+- For EL5131 (Encoder), variables must be manually linked.
 
-  You can see which PLC terminal this Axis is connected
-   Motion --> NC-Task 1 SAF --> Axes --> Axis N --> settings 
+### Drive Variables Linking
 
-   Adjust Paramters 
-  Motion --> NC-Task 1 SAF --> Axes --> Axis N --> Parameters
+1. Go to `Motion` -> `NC-Task 1 SAF` -> `Axes` -> `Axis N` -> `Drive` -> `NC-Drive`.
+2. Click on `Link To variable`.
 
-  Maximum Dynamics:
-    Reference Velocity (1.0)
-    Maximum Velocity (1.0)
-    Maximum Acceleration(1.0)
-    Maximum Deceleration (1.0)
-Default Dynamicd:
-  Default Acceleration (4.0)
-  Default Deceleration (4.0)
-Manual Motion and Homing
-  Homing Velocity (towards plc cam) (1.0)
-  Homing Velocity (off plc cam) (1.0)
-  Manual Velocity (Fast) (1.0)
-  Manual Velocity (Slow) (1.0)
-Monitoring
-  Position Lag Monitoring (FALSE)
+### Encoder Variables Linking
 
-  
-6. Modify the Nc-Task Encoder specific parameters
+1. Navigate to `Motion` -> `NC-Task 1 SAF` -> `Axes` -> `Axis N` -> `Enc` -> `NC-Encoder`.
+2. Select `Link To variable`.
 
-  Motion --> NC-Task 1 SAF --> Axes --> Axis N --> Enc --> parameter
-  Encoer Evaluation
-    Invert Encoder Counting Direction ? (True)
-    scaling Factor Numerator (mm/INC) (1.0)
-    Scale Factor Numerator (mm/INC) (135168.0)
-  
-7. Modify the Nc-Task Drive specific parameters
-  Motion --> NC-Task 1 SAF --> Axes --> Axis N --> Drive --> parameter
-  Output Settings:
-    Invert Motor Polarity : TRUE
-   
+## 3. Startup Task Configuration
 
-9. Save all changes --> Activate Configuration 
+For each terminal, particularly Drive (EL7332), add a "Startup" task:
 
-10. Enable Motor
-  Motion --> NC-Task 1 SAF --> Axes --> Axis N --> double click --> online  --> Enabling --> set --> select all --> OK
+1. Navigate to `I/O` -> `Devices` -> `Device N (Ethercat)` -> `Term N (EK1100)` -> `Term N (EL7332)` -> `Startup`.
+2. Click on `New` and navigate to section `8020:0`.
 
-11. Try and run in Functions
-   Motion --> NC-Task 1 SAF --> Axes --> Axis N --> double click --> Functions --> Raw rive output
-    Output Mode: Velocity
-    Output Value: 1 mm/s
-    CLick on Start. and the motor should move in some [positive] direction.
-    
- 
+Enter the following parameters:
+
+- Maximum current: `210`
+- Nominal current: `150`
+- Nominal Voltage: `24000`
+- Motor coil resistance: `5460`
+- Reduced current (positive): `100`
+- Reduced current (negative): `100`
+
+Avoid using CoE-online as it permanently writes values to the terminal, posing a risk if the terminal fails.
+
+## 4. NC-Task Axis Configuration
+
+Modify the NC-Task axis specific parameters by navigating to:
+
+- `Motion` -> `NC-Task 1 SAF` -> `Axes` -> `Axis N` -> `settings`.
+
+### Adjust Parameters
+
+- Go to `Parameters` under the same menu.
+- Set `Maximum Dynamics` and `Default Dynamics` as needed.
+- Configure `Manual Motion and Homing` and `Monitoring` settings.
+
+## 5. Encoder Parameters Modification
+
+For NC-Task Encoder specific parameters, navigate to:
+
+- `Motion` -> `NC-Task 1 SAF` -> `Axes` -> `Axis N` -> `Enc` -> `parameter`.
+
+Configure the encoder evaluation settings, such as the inversion of counting direction and scaling factors.
+
+## 6. Drive Parameters Modification
+
+Adjust the Drive specific parameters at:
+
+- `Motion` -> `NC-Task 1 SAF` -> `Axes` -> `Axis N` -> `Drive` -> `parameter`.
+
+Ensure settings like `Invert Motor Polarity` are correctly set.
+
+## 7. Saving and Activation
+
+Save all changes and activate the configuration to apply the settings.
+
+## 8. Motor Enabling
+
+To enable the motor:
+
+1. Navigate to `Motion` -> `NC-Task 1 SAF` -> `Axes` -> `Axis N`.
+2. Double-click, go online, and enable the motor.
+
+## 9. Testing Motor Function
+
+Under `Functions`, test the motor operation with specified output modes and values.
+
+## 10. Program Compilation and Linking
+
+To control the motor via a program:
+
+1. Write and compile the program including necessary library references.
+2. Link the generated variables to the NC-Task.
+
+```xml
+PROGRAM MAIN
+VAR
+    nAlive: UDINT;    
+END_VAR
+
+nAlive:= nAlive +1;
+
+P_Motion();
+```
+```xml
+PROGRAM P_Motion
+VAR
+	bEnable: BOOL;
+	bReset: BOOL;
+	bStart: BOOL;
+	bStop: BOOL;
+	fPosition: LREAL;
+	fVelocity: LREAL:= 0.5;
+
+	bPositiveEndstop AT %I*: BOOL;
+	bNegativeEndstop AT %I*: BOOL;
+	
+	stAxis: Tc2_MC2.AXIS_REF;
+	fbPower: Tc2_MC2.MC_Power; 
+	fbReset: Tc2_MC2.MC_Reset;
+	fbHalt: Tc2_MC2.MC_Halt;
+	fbMoveAbsolute: Tc2_MC2.MC_MoveAbsolute;
+END_VAR
+
+fbPower(
+	Axis:= stAxis, 
+	Enable:= bEnable, 
+	Enable_Positive:= TRUE, 
+	Enable_Negative:= TRUE, 
+	Override:= , 
+	BufferMode:= , 
+	Options:= , 
+	Status=> , 
+	Busy=> , 
+	Active=> , 
+	Error=> , 
+	ErrorID=> );
+	
+fbReset(
+	Axis:= stAxis, 
+	Execute:= bReset, 
+	Done=> , 
+	Busy=> , 
+	Error=> , 
+	ErrorID=> );	
+
+fbHalt(
+	Axis:= stAxis, 
+	Execute:= bStop, 
+	Deceleration:= , 
+	Jerk:= , 
+	BufferMode:= , 
+	Options:= , 
+	Done=> , 
+	Busy=> , 
+	Active=> , 
+	CommandAborted=> , 
+	Error=> , 
+	ErrorID=> );	
+	
+fbMoveAbsolute(
+	Axis:= stAxis, 
+	Execute:= bStart, 
+	Position:= fPosition, 
+	Velocity:= fVelocity, 
+	Acceleration:= , 
+	Deceleration:= , 
+	Jerk:= , 
+	BufferMode:= , 
+	Options:= , 
+	Done=> , 
+	Busy=> , 
+	Active=> , 
+	CommandAborted=> , 
+	Error=> , 
+	ErrorID=> );
+```
+
+## 11. Linking PLC Varaibles
+Link the axis to `Tc2_MC2.AXIS_REF` in the NC-Task settings, and associate the endstop variables accordingly.
+
+1. Navigate to `Motion` -> `NC-Task 1 SAF` -> `Axes` -> `Axis N`.
+2. `Double Click` -> `setting tab` -> `Link To PLC` -> ` Link the correspoinding varaible from the program
+
+1. Navigate to `I/O` -> `Devices` -> `Device N (Ethercat)` -> `Term N (EK1100)` -> `Term N (EL7332)`
+It is a 4 channel digital input. You can use "Link to" double click for the program variables to appear.
+
+## 12. Final Setup and Verification
+
+Complete the setup by linking all necessary variables and inputs in the configuration, and verify the system's operational status.
