@@ -1,5 +1,5 @@
 
-# Beckhoff Terminal Configuration Guide
+# Beckhoff Motor Configuration Guide
 
 This guide provides step-by-step instructions for configuring Beckhoff terminals, specifically focusing on the EL7332 and EL5131 models for motor and encoder control, respectively.
 
