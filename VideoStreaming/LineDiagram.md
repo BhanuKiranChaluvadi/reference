@@ -1,3 +1,4 @@
+```bash
 Camera Setup
   |
   |--> Initialize Camera
@@ -42,4 +43,4 @@ Display Video in Web Browser
   |--> Display Video
         (Use HTML5 `<video>` with HLS for compatibility across devices)
 
-
+```
