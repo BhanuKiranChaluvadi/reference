@@ -44,3 +44,34 @@ Display Video in Web Browser
         (Use HTML5 `<video>` with HLS for compatibility across devices)
 
 ```
+
+## Role of FFmpeg
+```
+Video Source (e.g., Camera)
+  |
+  |--> Capture Video
+  |
+  v
+FFmpeg (Running on a host machine)
+  |
+  |--> Encode Video
+  |      (Encode to H.264 using FFmpeg)
+  |
+  |--> Stream Video
+  |      (Use protocols like RTMP, HLS, etc.)
+  |
+  v
+Streaming Server (e.g., RTMP Server)
+  |
+  |--> Receive Stream from FFmpeg
+  |      (Server handles incoming video stream)
+  |
+  |--> Distribute Stream
+  |      (Manage and distribute to multiple viewers)
+  |
+  v
+Viewers (People watching the stream)
+  |
+  |--> Watch Live Video
+        (Via various devices and platforms)
+```
