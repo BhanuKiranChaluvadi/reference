@@ -76,3 +76,39 @@ Viewers (People watching the stream)
   |--> Watch Live Video
         (Via various devices and platforms)
 ```
+
+```
+Video Source (e.g., Camera)
+  |
+  |--> Capture Video
+  |
+  v
+FFmpeg (Running on a host machine)
+  |
+  |--> Encode Video
+  |      (Encode to H.264 using FFmpeg)
+  |
+  |--> Package Video
+  |      (Package into RTMP, SRT, or directly to HLS for transmission)
+  |
+  v
+Streaming Server (e.g., RTMP Server, SRT-capable Server, or Media Server)
+  |
+  |--> Receive Stream (via RTMP, SRT)
+  |      (Server handles incoming video stream)
+  |
+  |--> Distribute Stream
+  |      (Transcode or relay to HLS, RTMP, SRT, WebRTC, etc., for distribution)
+  |
+  v
+CDN (Content Delivery Network)
+  |
+  |--> Further Distribution
+  |      (Enhance scalability and availability, using HLS, DASH)
+  |
+  v
+Viewers (People watching the stream)
+  |
+  |--> Watch Live Video
+        (Via various devices and platforms, using compatible protocols)
+```
