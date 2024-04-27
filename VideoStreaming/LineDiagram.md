@@ -1,3 +1,4 @@
+# Video Streaming Overview
 ```bash
 Camera Setup
   |
@@ -45,7 +46,7 @@ Display Video in Web Browser
 
 ```
 
-## Role of FFmpeg
+# Role of FFmpeg
 ```
 Video Source (e.g., Camera)
   |
