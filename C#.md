@@ -56,3 +56,9 @@ dotnet run --project YourConsoleAppName
 dotnet add package Newtonsoft.Json
 dotnet add package Beckhoff.TwinCAT.Ads
 ```
+
+## dependency tree walker
+Download it from the readme "Download here".  After which you can run "Dependencies.Gui"
+```bash
+https://github.com/lucasg/Dependencies?tab=readme-ov-file
+```
