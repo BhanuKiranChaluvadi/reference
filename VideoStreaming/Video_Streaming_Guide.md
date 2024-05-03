@@ -70,7 +70,7 @@ This diagram visually represents the steps and components involved in video stre
 
 ```mermaid
 graph LR
-    Camera -->|Capture| Encoder
-    Encoder -->|Encode| Server[Streaming Server]
-    Server -->|Distribute| Browser{Web Browser}
-```
+    A[Camera Capture] -->|Raw Data| B[Encoder]
+    B -->|Encoded Data| C[Container]
+    C -->|Containerized Data| D[Streaming Server]
+    D -->|Streamed Data| E[Client Devices]
