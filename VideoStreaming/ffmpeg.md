@@ -275,3 +275,10 @@ ffmpeg -f v4l2 -i /dev/video0 -c:v libx264 -preset veryfast -tune zerolatency -g
 
 ### Setting Up the Streaming Environment
 Before running these commands, ensure you have the appropriate directories (`stream1` and `stream2`) created in the root directory where your Python HTTP server will be running. This setup allows you to serve the HLS streams from different endpoints on your local server, accessible via the browser as described in the previous response.
+
+
+-------------------------------------------------------------------------------------------------
+
+```bash
+ffmpeg -f rawvideo -pix_fmt yuv420p -s 1920x1080 -r 30 -i - -c:v libx264 -preset veryfast -tune zerolatency -g 30 -sc_threshold 0 -b:v 1000k -maxrate 1000k -bufsize 500k -profile:v main -bf 0 -f hls -hls_time 2 -hls_list_size 3 -hls_flags delete_segments+append_list -hls_segment_filename 'hls_out%03d.ts' 'playlist.m3u8'
+```
