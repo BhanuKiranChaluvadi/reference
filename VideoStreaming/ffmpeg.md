@@ -282,3 +282,7 @@ Before running these commands, ensure you have the appropriate directories (`str
 ```bash
 ffmpeg -f rawvideo -pix_fmt yuv420p -s 1920x1080 -r 30 -i - -c:v libx264 -preset veryfast -tune zerolatency -g 30 -sc_threshold 0 -b:v 1000k -maxrate 1000k -bufsize 500k -profile:v main -bf 0 -f hls -hls_time 2 -hls_list_size 3 -hls_flags delete_segments+append_list -hls_segment_filename 'hls_out%03d.ts' 'playlist.m3u8'
 ```
+
+```bash
+string inputArgs = "-f rawvideo -pix_fmt yuv420p -s 1920x1080 -r 30 -i - -c:v libx264 -preset veryfast -tune zerolatency -g 30 -sc_threshold 0 -b:v 1000k -maxrate 1000k -bufsize 500k -profile:v main -bf 0 -movflags +faststart -f mp4 'output_video.mp4'";
+```
