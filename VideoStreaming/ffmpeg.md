@@ -286,3 +286,7 @@ ffmpeg -f rawvideo -pix_fmt yuv420p -s 1920x1080 -r 30 -i - -c:v libx264 -preset
 ```bash
 string inputArgs = "-f rawvideo -pix_fmt yuv420p -s 1920x1080 -r 30 -i - -c:v libx264 -preset veryfast -tune zerolatency -g 30 -sc_threshold 0 -b:v 1000k -maxrate 1000k -bufsize 500k -profile:v main -bf 0 -movflags +faststart -f mp4 'output_video.mp4'";
 ```
+
+```bash
+string inputArgs = "-f rawvideo -pix_fmt bgra -s 3088x2076 -r 30 -i - -c:v libx264 -preset veryfast -tune zerolatency -profile:v high444 -crf 20 -g 30 -sc_threshold 0 -maxrate 3000k -bufsize 6000k -movflags +faststart -f mp4 'output_video.mp4";
+```
