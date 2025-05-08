@@ -212,6 +212,68 @@ This hypothetical plot illustrates how the system temperature behaves under diff
 
 ---
 
+## ❗ Design Considerations & Common Pitfalls
+
+When designing or programming a Ramp + PID + PWM heater controller, here are key things you must pay attention to:
+
+### 1. 🧮 **Ramp Rate vs System Capacity**
+- Avoid setting ramp rates faster than your system can physically handle.
+- Always validate with tests to ensure the heater can track the ramp without lag.
+
+### 2. ⏲️ **Loop Synchronization**
+- Ensure **PID loop is faster than ramp update rate**.
+- Ensure **PWM cycle is long enough** to reflect the average power and avoid flickering (especially for relays).
+
+### 3. ⚠️ **Thermal Inertia Awareness**
+- Fast systems may **overshoot** due to heating momentum.
+- Consider adding predictive elements or reducing PID gain or ramp rate accordingly.
+
+### 4. 🧠 **PID Tuning**
+- Poorly tuned PID can oscillate, overshoot, or respond too slowly.
+- Use practical tuning methods: Ziegler-Nichols, trial-and-error, or auto-tuning.
+
+### 5. 🔁 **PWM Resolution vs Control Resolution**
+- A short PWM cycle may be too fine-grained for thermal systems, while a long one reduces resolution.
+- Balance based on desired resolution and hardware switching limits.
+
+### 6. 🛡️ **Safety Checks**
+- Add maximum heater ON time limit per cycle.
+- Add watchdogs or deviation alarms if temp doesn't follow expected ramp.
+
+### 7. 📉 **Ramp Termination Conditions**
+- Ensure ramp stops or holds once target is reached.
+- Avoid runaway conditions where ramp continues indefinitely.
+
+> ✅ Good design = consistent timing, realistic expectations, safety margins, and smooth control logic.
+
+---
+
+## ❓ Frequently Asked Questions (FAQs)
+
+### 1. ❓ *What happens if the system doesn't heat as fast as the ramp expects (e.g., 5°C/min)?*
+If the environment causes slower heating than the defined ramp rate (e.g., due to thermal mass or heat loss), the actual temperature will **lag behind** the ramp setpoint. 
+
+This can cause the PID controller to continuously output high values (e.g., 100%) trying to catch up. Without limits or protection logic, the system may operate inefficiently or remain in heating mode longer than expected.
+
+#### ✅ Potential Solutions:
+- 🔍 **Monitor deviation** between the actual temperature and the ramp setpoint.
+- ⏸️ **Pause the ramp** progression if deviation exceeds a threshold (e.g., >3°C for more than 10s).
+- 🚨 **Trigger alarms or fallback modes** if the system cannot meet the ramp for safety-critical operations.
+- 🧠 **Implement adaptive ramping**: Adjust the ramp rate in real-time based on heating feedback.
+
+> 💡 Tip: Monitor the deviation between actual temp and ramp setpoint. Add alerts or fallbacks if deviation persists too long.
+
+---
+
+### 2. ❓ *What happens if the system heats up too quickly and exceeds the target within the PWM cycle?*
+If the system responds too fast and **overshoots the target temperature** within a PWM window, the heater will remain OFF for the remainder of the PWM period — but the **overshoot has already occurred** due to thermal inertia.
+
+This is a known limitation of time-windowed PWM combined with high PID output. The heater continues affecting the system even after switching OFF.
+
+> 💡 Solution: Reduce ramp rate, tune PID to lower Kp/Ki values, or shorten the PWM period if your actuator supports faster switching (e.g., SSR).
+
+---
+
 ## ⚖️ Comparison: Bang-Bang vs PID + PWM vs Ramp + Feedback (PID)
 
 | Feature                          | 🔂 Bang-Bang               | 🧠 PID + ⚡ PWM            | 🔼 Ramp + PID + PWM       |
