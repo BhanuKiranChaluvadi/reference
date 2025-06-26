@@ -1,64 +1,76 @@
+# ⚙️ GitHub Copilot Prompt Template for Beckhoff Structured Text (IEC 61131-3, TwinCAT 3.1+)
 
-### 🔧 **Prompt for GitHub Copilot: Generate Beckhoff Structured Text (IEC 61131-3) Code**
+## 🚀 Task
 
-Generate Beckhoff Structured Text (ST) code that **strictly adheres** to the following prioritized guidelines, ensuring safety, maintainability, and extensibility:
-
----
-
-### 🚨 **1. Safety and Error Handling (Top Priority)**
-- Safety is **non-negotiable**—always implement robust error handling and status mechanisms.
-- Clearly define behaviors for **emergency stop** and **reset** to manage critical conditions reliably.
-- Include structured methods for setting, tracking, and retrieving errors.
+Generate **Beckhoff Structured Text (ST)** code for **TwinCAT 3.1+** that meets enterprise software standards.  
+Focus strictly on **core logic**. Avoid boilerplate, scaffolding, or speculative helpers unless they support safety or structural correctness.
 
 ---
 
-### ⚙️ **2. Initialization Rules**
-- Never **explicitly call `FB_init`**.
-- Always **pass initialization parameters via parentheses** during variable declaration (this triggers `FB_init` implicitly).
-- Avoid performing **repeated initialization checks** in logic—ensure all setup is complete in `FB_init`.
-- If initialization logic is needed, place it in a clearly named **`Configure()` method** instead of relying on `FB_init`.
+## 🛡️ 1. Safety, Error Handling & Recovery (Top Priority)
+
+- Implement **explicit and robust error detection, propagation, and handling**.
+- Use structured error types, function blocks, or boolean flags—as appropriate.
+- Include mechanisms for:
+  - **Emergency stop** behavior and system-level safety reactions.
+  - **Safe shutdown fallback** in all error paths.
+  - **System reset** logic that clearly restores safe operating state.
 
 ---
 
-### 🧠 **3. Design Principles**
-- Follow **SOLID** principles strictly.
-- Emphasize **composition** over inheritance; encapsulate sub-behaviors using internal function blocks.
-- Adhere to **Separation of Concerns (SoC)**, **DRY**, and **KISS** principles.
-- Use **relevant design patterns** where applicable (e.g., Strategy, State).
+## 🔄 2. Initialization Pattern
+
+- Do **not** call `FB_init` explicitly—use parentheses-style instantiation only.
+- Place all setup logic inside a `Configure()` method.
+- Inject dependencies and collaborators during `Configure()` or equivalent.
+- Avoid runtime checks for initialization in cyclic logic.
 
 ---
 
-### 🧪 **4. Testing and Simulation**
-- Ensure all code is **modular and independently testable**.
-- Structure logic to support **simulation and emulation**:
-  - Process variables (e.g., temperatures, positions) must **smoothly transition** to setpoints using linear interpolation or filters—**no instant jumps**.
+## 🧠 3. Design Principles
+
+- Apply **SOLID** design principles to ensure scalability, modularity, and testability.
+- Prioritize:
+  - **Composition** over inheritance.
+  - **Dependency injection** for flexibility and separation of concerns.
+- Use **clean interfaces**, **single-responsibility function blocks**, and **loosely coupled modules**.
+- Employ design patterns (e.g., Strategy, State) only when clearly applicable.
 
 ---
 
-### 🧼 **5. Maintainability & Clarity**
-- Write **modular**, **reusable**, and **clearly named** methods and variables.
-- Avoid magic numbers—use **well-named constants** or enums.
-- Solutions must be **simple, readable, and easily extendable**.
+## 🧪 4. Testability
+
+- All logic must be **modular and independently testable**.
+- Avoid tight coupling to I/O or hardware interfaces—prefer abstraction.
+- Enable **realistic simulation** by avoiding hard transitions and using filters/interpolation for signal tracking.
 
 ---
 
-### 🗣️ **6. Comments and Documentation**
-- Include **clear, descriptive comments** for all logic, decisions, and assumptions.
-- Comments must help any future developer (or Copilot) understand the purpose of each section.
+## 🧼 5. Maintainability
+
+- Encapsulate logic inside **well-structured FBs** and **clearly named methods**.
+- Avoid magic numbers—use named constants.
+- Keep internal logic **clean, reusable, and self-contained**.
 
 ---
 
-### 🚫 **7. Coding Restrictions & Conventions**
-- **Do not use `VAR_IN_OUT`** parameters.
-- **Do not place logic** directly inside the function block body—use **PUBLIC**, **PRIVATE**, or **PROTECTED** methods.
-- **No optional parameters** in method declarations—always provide all arguments.
-- For methods/functions, use `FunctionName := returnValue; RETURN;` — **never use `RETURN returnValue`**.
+## 📝 6. Documentation & Comments
+
+- Provide **descriptive comments** that explain not just how but **why** decisions were made.
+- Document assumptions, safety mechanisms, and error paths.
 
 ---
 
-### 📌 **Reminders for Copilot**
-- Never call `FB_init` directly.
-- Simulate hardware interactions smoothly and logically.
-- Prefer structured, safe, and extendable code over brevity or cleverness.
-- Maintain **strong separation of responsibilities** within the FB design.
+## 🚫 7. Syntax & Code Rules
 
+- ❌ No `VAR_IN_OUT`.
+- ❌ No logic directly in FB body—**always use PUBLIC/PRIVATE methods**.
+- ❌ No optional parameters—**always explicitly specify all arguments**.
+- ✅ Method return pattern:
+  ```code
+  FunctionName := result;
+  RETURN;
+  ```
+
+- ✅ Use `END_METHOD` after method implementation.
+- ✅ Use tab space for method implementation.
