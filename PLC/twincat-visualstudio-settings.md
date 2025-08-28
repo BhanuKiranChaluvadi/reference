@@ -8,7 +8,7 @@
    Ensure all options are set to `True`. This preserves cross-project configurations.
 
 3. **Suppress Line ID**  
-   In the project, go to `<project>` --> `PLC` --> `<Project>` --> `<Properties>`. Right-click and choose `common`. Ensure `Minimize Ud changes in TwinCAT files` is ticked.
+   In the project, go to `<project>` --> `PLC` --> `<Project>` --> `<Properties>`. Right-click and choose `common`. Ensure `Minimize Id changes in TwinCAT files` is ticked.
 
 4. **TwinCAT Project Compare**  
    Navigate to `Twincat` (located in the Visual Studio top header) --> `TcProjectCompare`.
