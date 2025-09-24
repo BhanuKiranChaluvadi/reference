@@ -77,3 +77,8 @@ Focus strictly on **core logic**. Avoid boilerplate, scaffolding, or speculative
 
 
 The operator __ISVALIDREF can only be used for operands of type REFERENCE TO. This operator cannot be used for checking interface variables. To check whether an interface variable was already assigned a function block instance, you can check the interface variable for not equal to 0 (IF iSample <> 0 THEN …).
+
+
+No Explicit calling og FB_init. All parameters defined in FB_init must be passed during the function block varaible initilization. This is Beckhoff structured text constraint
+
+
