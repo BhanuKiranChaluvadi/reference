@@ -81,4 +81,7 @@ The operator __ISVALIDREF can only be used for operands of type REFERENCE TO. Th
 
 No Explicit calling og FB_init. All parameters defined in FB_init must be passed during the function block varaible initilization. This is Beckhoff structured text constraint
 
+Following YAGNI, KISS and Dry principles. 
+You must all follow appropriate interfaces, dependency injection, composition over inheritance and single responsibility priciple. 
+
 
