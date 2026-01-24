@@ -1,1 +1,3 @@
 Analyze all current changes in the repository by comparing the working tree with the latest commit, then stage all files, generate a clear and appropriate Git commit message that accurately reflects the changes made, commit the changes, and push them to the `origin` remote on the current branch. Use standard Git best practices for the commit message and do not invent changes that are not present in the repository. Focus the commit message only on the change done code wise only. No need of including the project files related stuff
+
+This is beckhoff structured text. so while writing the commit message you must ignore all the hash changes etc. You take only the code modifications while wiring the commit message
